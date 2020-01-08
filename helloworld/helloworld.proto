@@ -10,6 +10,14 @@ option objc_class_prefix = "HLW";
 
 package helloworld;
 
+message LongHelloRequest {
+    string name = 1;
+}
+
+message LongHelloResponse {
+    string result = 1;
+}
+
 // The greeting service definition.
 service Greeter {
     // Sends a greeting
@@ -17,6 +25,9 @@ service Greeter {
     
     // Sends another greeting
     rpc SayHelloAgain (HelloRequest) returns (HelloResponse) {}
+
+    // Client Streaming
+    rpc LongSayHello(stream LongHelloRequest) returns (LongHelloResponse) {}
 }
 
 // The request message containing the user's name

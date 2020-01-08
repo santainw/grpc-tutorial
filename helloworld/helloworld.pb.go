@@ -24,6 +24,84 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
+type LongHelloRequest struct {
+	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *LongHelloRequest) Reset()         { *m = LongHelloRequest{} }
+func (m *LongHelloRequest) String() string { return proto.CompactTextString(m) }
+func (*LongHelloRequest) ProtoMessage()    {}
+func (*LongHelloRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_73149fedf49f4319, []int{0}
+}
+
+func (m *LongHelloRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_LongHelloRequest.Unmarshal(m, b)
+}
+func (m *LongHelloRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_LongHelloRequest.Marshal(b, m, deterministic)
+}
+func (m *LongHelloRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LongHelloRequest.Merge(m, src)
+}
+func (m *LongHelloRequest) XXX_Size() int {
+	return xxx_messageInfo_LongHelloRequest.Size(m)
+}
+func (m *LongHelloRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_LongHelloRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_LongHelloRequest proto.InternalMessageInfo
+
+func (m *LongHelloRequest) GetName() string {
+	if m != nil {
+		return m.Name
+	}
+	return ""
+}
+
+type LongHelloResponse struct {
+	Result               string   `protobuf:"bytes,1,opt,name=result,proto3" json:"result,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *LongHelloResponse) Reset()         { *m = LongHelloResponse{} }
+func (m *LongHelloResponse) String() string { return proto.CompactTextString(m) }
+func (*LongHelloResponse) ProtoMessage()    {}
+func (*LongHelloResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_73149fedf49f4319, []int{1}
+}
+
+func (m *LongHelloResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_LongHelloResponse.Unmarshal(m, b)
+}
+func (m *LongHelloResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_LongHelloResponse.Marshal(b, m, deterministic)
+}
+func (m *LongHelloResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LongHelloResponse.Merge(m, src)
+}
+func (m *LongHelloResponse) XXX_Size() int {
+	return xxx_messageInfo_LongHelloResponse.Size(m)
+}
+func (m *LongHelloResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_LongHelloResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_LongHelloResponse proto.InternalMessageInfo
+
+func (m *LongHelloResponse) GetResult() string {
+	if m != nil {
+		return m.Result
+	}
+	return ""
+}
+
 // The request message containing the user's name
 type HelloRequest struct {
 	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
@@ -36,7 +114,7 @@ func (m *HelloRequest) Reset()         { *m = HelloRequest{} }
 func (m *HelloRequest) String() string { return proto.CompactTextString(m) }
 func (*HelloRequest) ProtoMessage()    {}
 func (*HelloRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_73149fedf49f4319, []int{0}
+	return fileDescriptor_73149fedf49f4319, []int{2}
 }
 
 func (m *HelloRequest) XXX_Unmarshal(b []byte) error {
@@ -76,7 +154,7 @@ func (m *HelloResponse) Reset()         { *m = HelloResponse{} }
 func (m *HelloResponse) String() string { return proto.CompactTextString(m) }
 func (*HelloResponse) ProtoMessage()    {}
 func (*HelloResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_73149fedf49f4319, []int{1}
+	return fileDescriptor_73149fedf49f4319, []int{3}
 }
 
 func (m *HelloResponse) XXX_Unmarshal(b []byte) error {
@@ -105,6 +183,8 @@ func (m *HelloResponse) GetMessage() string {
 }
 
 func init() {
+	proto.RegisterType((*LongHelloRequest)(nil), "helloworld.LongHelloRequest")
+	proto.RegisterType((*LongHelloResponse)(nil), "helloworld.LongHelloResponse")
 	proto.RegisterType((*HelloRequest)(nil), "helloworld.HelloRequest")
 	proto.RegisterType((*HelloResponse)(nil), "helloworld.HelloResponse")
 }
@@ -112,20 +192,23 @@ func init() {
 func init() { proto.RegisterFile("helloworld/helloworld.proto", fileDescriptor_73149fedf49f4319) }
 
 var fileDescriptor_73149fedf49f4319 = []byte{
-	// 201 bytes of a gzipped FileDescriptorProto
+	// 251 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x92, 0xce, 0x48, 0xcd, 0xc9,
 	0xc9, 0x2f, 0xcf, 0x2f, 0xca, 0x49, 0xd1, 0x47, 0x30, 0xf5, 0x0a, 0x8a, 0xf2, 0x4b, 0xf2, 0x85,
-	0xb8, 0x10, 0x22, 0x4a, 0x4a, 0x5c, 0x3c, 0x1e, 0x20, 0x5e, 0x50, 0x6a, 0x61, 0x69, 0x6a, 0x71,
-	0x89, 0x90, 0x10, 0x17, 0x4b, 0x5e, 0x62, 0x6e, 0xaa, 0x04, 0xa3, 0x02, 0xa3, 0x06, 0x67, 0x10,
-	0x98, 0xad, 0xa4, 0xc9, 0xc5, 0x0b, 0x55, 0x53, 0x5c, 0x90, 0x9f, 0x57, 0x9c, 0x2a, 0x24, 0xc1,
-	0xc5, 0x9e, 0x9b, 0x5a, 0x5c, 0x9c, 0x98, 0x0e, 0x53, 0x07, 0xe3, 0x1a, 0x4d, 0x61, 0xe4, 0x62,
-	0x77, 0x2f, 0x4a, 0x4d, 0x2d, 0x49, 0x2d, 0x12, 0x72, 0xe4, 0xe2, 0x08, 0x4e, 0xac, 0x04, 0xeb,
-	0x14, 0x92, 0xd0, 0x43, 0x72, 0x05, 0xb2, 0x85, 0x52, 0x92, 0x58, 0x64, 0x20, 0xd6, 0x28, 0x31,
-	0x08, 0xb9, 0x71, 0xf1, 0xc2, 0x8c, 0x70, 0x4c, 0x4f, 0xcc, 0xcc, 0x23, 0xd3, 0x1c, 0x27, 0x33,
-	0x2e, 0xe9, 0xcc, 0x7c, 0xbd, 0xf4, 0xa2, 0x82, 0x64, 0xbd, 0xd4, 0x8a, 0xc4, 0xdc, 0x82, 0x9c,
-	0xd4, 0x62, 0x24, 0xe5, 0x4e, 0xfc, 0x60, 0xf5, 0xe1, 0x20, 0x76, 0x00, 0x28, 0x84, 0x02, 0x18,
-	0x17, 0x31, 0x31, 0x7b, 0xf8, 0x84, 0x27, 0xb1, 0x81, 0x03, 0xcc, 0x18, 0x10, 0x00, 0x00, 0xff,
-	0xff, 0x5c, 0x7c, 0xc1, 0x37, 0x4f, 0x01, 0x00, 0x00,
+	0xb8, 0x10, 0x22, 0x4a, 0x6a, 0x5c, 0x02, 0x3e, 0xf9, 0x79, 0xe9, 0x1e, 0x20, 0x91, 0xa0, 0xd4,
+	0xc2, 0xd2, 0xd4, 0xe2, 0x12, 0x21, 0x21, 0x2e, 0x96, 0xbc, 0xc4, 0xdc, 0x54, 0x09, 0x46, 0x05,
+	0x46, 0x0d, 0xce, 0x20, 0x30, 0x5b, 0x49, 0x9b, 0x4b, 0x10, 0x49, 0x5d, 0x71, 0x41, 0x7e, 0x5e,
+	0x71, 0xaa, 0x90, 0x18, 0x17, 0x5b, 0x51, 0x6a, 0x71, 0x69, 0x4e, 0x09, 0x54, 0x29, 0x94, 0xa7,
+	0xa4, 0xc4, 0xc5, 0x43, 0xd0, 0x40, 0x4d, 0x2e, 0x5e, 0x54, 0xc3, 0x24, 0xb8, 0xd8, 0x73, 0x53,
+	0x8b, 0x8b, 0x13, 0xd3, 0x61, 0xea, 0x60, 0x5c, 0xa3, 0xa7, 0x8c, 0x5c, 0xec, 0xee, 0x45, 0xa9,
+	0xa9, 0x25, 0xa9, 0x45, 0x42, 0x8e, 0x5c, 0x1c, 0xc1, 0x89, 0x95, 0x60, 0x9d, 0x42, 0x12, 0x7a,
+	0x48, 0x5e, 0x43, 0xb6, 0x50, 0x4a, 0x12, 0x8b, 0x0c, 0xc4, 0x1a, 0x25, 0x06, 0x21, 0x37, 0x2e,
+	0x5e, 0x98, 0x11, 0x8e, 0xe9, 0x89, 0x99, 0x79, 0xe4, 0x9a, 0xe3, 0xcf, 0xc5, 0x03, 0x0a, 0x12,
+	0xb8, 0x73, 0x64, 0x90, 0x15, 0xa3, 0x07, 0xaa, 0x94, 0x2c, 0x0e, 0x59, 0x98, 0x71, 0x1a, 0x8c,
+	0x4e, 0x66, 0x5c, 0xd2, 0x99, 0xf9, 0x7a, 0xe9, 0x45, 0x05, 0xc9, 0x7a, 0xa9, 0x15, 0x89, 0xb9,
+	0x05, 0x39, 0xa9, 0xc5, 0x48, 0x9a, 0x9c, 0xf8, 0xc1, 0x3a, 0xc2, 0x41, 0xec, 0x00, 0x50, 0x3c,
+	0x06, 0x30, 0x2e, 0x62, 0x62, 0xf6, 0xf0, 0x09, 0x4f, 0x62, 0x03, 0x47, 0xab, 0x31, 0x20, 0x00,
+	0x00, 0xff, 0xff, 0x20, 0x4b, 0x29, 0x68, 0xf5, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -144,6 +227,8 @@ type GreeterClient interface {
 	SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error)
 	// Sends another greeting
 	SayHelloAgain(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloResponse, error)
+	// Client Streaming
+	LongSayHello(ctx context.Context, opts ...grpc.CallOption) (Greeter_LongSayHelloClient, error)
 }
 
 type greeterClient struct {
@@ -172,12 +257,48 @@ func (c *greeterClient) SayHelloAgain(ctx context.Context, in *HelloRequest, opt
 	return out, nil
 }
 
+func (c *greeterClient) LongSayHello(ctx context.Context, opts ...grpc.CallOption) (Greeter_LongSayHelloClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Greeter_serviceDesc.Streams[0], "/helloworld.Greeter/LongSayHello", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &greeterLongSayHelloClient{stream}
+	return x, nil
+}
+
+type Greeter_LongSayHelloClient interface {
+	Send(*LongHelloRequest) error
+	CloseAndRecv() (*LongHelloResponse, error)
+	grpc.ClientStream
+}
+
+type greeterLongSayHelloClient struct {
+	grpc.ClientStream
+}
+
+func (x *greeterLongSayHelloClient) Send(m *LongHelloRequest) error {
+	return x.ClientStream.SendMsg(m)
+}
+
+func (x *greeterLongSayHelloClient) CloseAndRecv() (*LongHelloResponse, error) {
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	m := new(LongHelloResponse)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // GreeterServer is the server API for Greeter service.
 type GreeterServer interface {
 	// Sends a greeting
 	SayHello(context.Context, *HelloRequest) (*HelloResponse, error)
 	// Sends another greeting
 	SayHelloAgain(context.Context, *HelloRequest) (*HelloResponse, error)
+	// Client Streaming
+	LongSayHello(Greeter_LongSayHelloServer) error
 }
 
 // UnimplementedGreeterServer can be embedded to have forward compatible implementations.
@@ -189,6 +310,9 @@ func (*UnimplementedGreeterServer) SayHello(ctx context.Context, req *HelloReque
 }
 func (*UnimplementedGreeterServer) SayHelloAgain(ctx context.Context, req *HelloRequest) (*HelloResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SayHelloAgain not implemented")
+}
+func (*UnimplementedGreeterServer) LongSayHello(srv Greeter_LongSayHelloServer) error {
+	return status.Errorf(codes.Unimplemented, "method LongSayHello not implemented")
 }
 
 func RegisterGreeterServer(s *grpc.Server, srv GreeterServer) {
@@ -231,6 +355,32 @@ func _Greeter_SayHelloAgain_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Greeter_LongSayHello_Handler(srv interface{}, stream grpc.ServerStream) error {
+	return srv.(GreeterServer).LongSayHello(&greeterLongSayHelloServer{stream})
+}
+
+type Greeter_LongSayHelloServer interface {
+	SendAndClose(*LongHelloResponse) error
+	Recv() (*LongHelloRequest, error)
+	grpc.ServerStream
+}
+
+type greeterLongSayHelloServer struct {
+	grpc.ServerStream
+}
+
+func (x *greeterLongSayHelloServer) SendAndClose(m *LongHelloResponse) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func (x *greeterLongSayHelloServer) Recv() (*LongHelloRequest, error) {
+	m := new(LongHelloRequest)
+	if err := x.ServerStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 var _Greeter_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "helloworld.Greeter",
 	HandlerType: (*GreeterServer)(nil),
@@ -244,6 +394,12 @@ var _Greeter_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Greeter_SayHelloAgain_Handler,
 		},
 	},
-	Streams:  []grpc.StreamDesc{},
+	Streams: []grpc.StreamDesc{
+		{
+			StreamName:    "LongSayHello",
+			Handler:       _Greeter_LongSayHello_Handler,
+			ClientStreams: true,
+		},
+	},
 	Metadata: "helloworld/helloworld.proto",
 }
